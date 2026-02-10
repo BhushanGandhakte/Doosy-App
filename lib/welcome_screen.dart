@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:practice_ui/login_screen.dart';
-import 'package:practice_ui/signup_screen.dart';
+import 'package:practice_ui/auth/login_screen.dart';
+import 'package:practice_ui/auth/signup_screen.dart';
 
 class Welcome extends StatefulWidget{
 

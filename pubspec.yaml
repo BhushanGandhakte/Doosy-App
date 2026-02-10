@@ -59,6 +59,7 @@ flutter:
     - assets/images/
     - assets/category_images/
     - assets/newlyadded_images/
+    - assets/my_order_images/
     - assets/carousel_images/ic_carousel.png
 
   # The following line ensures that the Material Icons font is

@@ -21,6 +21,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body:
         CommonWidgets.columnLayout(
           children: [
@@ -41,7 +42,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
                   CommonWidgets.writeText(
                     text: 'Tracking',
                     fontSize: 24,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                   ),
                   CommonWidgets.addSizedBox(
                     height: 20,
@@ -65,7 +66,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
                       child: CommonWidgets.addContainer(
                         height: 363,
                         width:  MediaQuery.of(context).size.width,
-                        color: Colors.white,
+                        color: Colors.transparent,
                         borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
                         child: CommonWidgets.givePadding(
                           right: 20, left: 20, top: 20, bottom: 20,
@@ -85,29 +86,34 @@ class _TrackingScreenState extends State<TrackingScreen> {
                                       fontSize: 18
                                   ),
                                 ),
-                                CommonWidgets.addListViewBuilder(
-                                  physics: NeverScrollableScrollPhysics(),
-                                    dataList: orderData,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w800
+                                Expanded(
+                                  child: CommonWidgets.addListViewBuilder(
+                                    physics: NeverScrollableScrollPhysics(),
+                                      dataList: orderData,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w800
+                                  ),
                                 ),
-                                CommonWidgets.customButton(
-                                  hint: "CHECK ORDER STATUS",
-                                  buttonColor: buttonColor,
-                                  onTap:  () {
-                                    setState(() {
-                                      buttonColor = Color.fromRGBO(0, 217, 174, 1);
-                                    });
-                                    // Navigator.push(context,
-                                    //     MaterialPageRoute(builder: (context) => ));
-                                  },
-                                )
                               ]
                           ),
                         ),
                       ),
                     ),
-
+                    Positioned(
+                        left: 20,
+                        top: 520,
+                        child: CommonWidgets.customButton(
+                          hint: "CHECK ORDER STATUS",
+                          buttonColor:  Color.fromRGBO(0, 217, 174, 1),
+                          onTap:  () {
+                            setState(() {
+                              buttonColor = Color.fromRGBO(0, 217, 174, 1);
+                            });
+                            // Navigator.push(context,
+                            //     MaterialPageRoute(builder: (context) => ));
+                          },
+                        )
+                    ),
                   ]
                 ),
               ),
